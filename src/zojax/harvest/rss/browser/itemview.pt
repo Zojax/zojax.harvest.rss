@@ -1,0 +1,14 @@
+<tal:block replace="structure context/summary | nothing" />
+<hr />
+<dl>
+  <dt>Original item</dt>
+  <dd><a tal:attributes="href context/url" tal:content="context/url" /></dd>
+  <tal:block condition="context/author">
+  <dt>Author</dt>
+  <dd tal:content="context/author" />
+  </tal:block>
+  <tal:block condition="context/published">
+  <dt>Published on</dt>
+  <dd tal:content="context/published" />
+  </tal:block>
+</dl>

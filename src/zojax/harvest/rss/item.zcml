@@ -1,0 +1,25 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   i18n_domain="zojax.harvest.rss">
+
+  <z3ext:content
+     title="Harvested Item"
+     name="contenttype.rss.item"
+     schema=".interfaces.IHarvestedRSSItem"
+     class=".item.HarvestedRSSItem"
+     contenttype=".interfaces.IHarvestedRSSItemType"
+     containers="contenttype.rss.workspace"
+     type=".interfaces.IHarvestedRSSItemType
+           z3ext.content.type.interfaces.IInactiveType" />
+
+  <class class=".item.HarvestedRSSItem">
+    <implements interface="z3ext.ownership.interfaces.IOwnerAware" />
+    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
+    <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
+    
+    <require permission="zope.View" interface=".interfaces.IHarvestedRSSItem" />
+
+  </class>
+
+</configure>

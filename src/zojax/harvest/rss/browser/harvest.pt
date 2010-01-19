@@ -1,0 +1,4 @@
+<h1>Harvest</h1>
+
+<tal:block tal:repeat="context view/forms"
+       tal:content="structure pagelet:form" />

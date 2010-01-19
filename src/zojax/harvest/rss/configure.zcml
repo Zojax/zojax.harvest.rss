@@ -1,0 +1,23 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   i18n_domain="zojax.harvest.rss">
+
+  <z3ext:product
+    name="harvest-rss"
+    title="Harvest RSS"
+    description="Harvest RSS feeds and convert them to portal content"
+    schema=".interfaces.IHarvestRSSProduct"
+    class=".product.HarvestRSSProduct"
+    configurable="false" />
+
+  <registerIn registry="z3ext.product.harvest-rss">
+
+    <include file="workspace.zcml" />
+    <include file="item.zcml" />
+
+    <include package=".browser" />
+    
+  </registerIn>
+    
+</configure>

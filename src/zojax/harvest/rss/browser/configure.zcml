@@ -1,0 +1,39 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.harvest.rss">
+   
+  <adapter factory=".widgets.FeedsFieldWidget" />
+  <adapter factory=".widgets.FeedsWidgetConverter" />
+
+  <z3c:widgetTemplate
+     mode="display"
+     widget=".widgets.IFeedsWidget"
+     layer="z3c.form.interfaces.IFormLayer"
+     template="feedswidget.pt" />
+
+  <z3ext:pagelet
+     name="harvest"
+     for="..interfaces.IHarvestedRSSWorkspace"
+     class=".harvest.HarvestForm"
+     permission="zope.ManageServices" />
+
+  <adapter
+     name="content.harvest"
+     provides=".harvest.IHarvestAction"
+     factory=".harvest.HarvestAction" />
+
+  <browser:defaultView
+     name="view"
+     for="..interfaces.IHarvestedRSSItem" />
+
+  <z3ext:pagelet
+     name="view"
+     for="..interfaces.IHarvestedRSSItem"
+     provides="z3ext.content.type.interfaces.IContentView"
+     class=".itemview.ItemView"
+     permission="zope.View" />
+
+</configure>

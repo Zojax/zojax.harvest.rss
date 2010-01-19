@@ -1,0 +1,4 @@
+<ul tal:condition="view/value">
+  <li tal:repeat="v view/value"
+      tal:content="v" />
+</ul>
