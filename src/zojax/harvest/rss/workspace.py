@@ -7,11 +7,11 @@ from ZODB.interfaces import IDatabase
 from scheduler.interfaces import ITask
 from scheduler.loop import LoopTask
 
-from z3ext.catalog.interfaces import ICatalogConfiglet
-from z3ext.content.space.interfaces import ISpace
-from z3ext.content.space.workspace import WorkspaceFactory
-from z3ext.content.type.container import ContentContainer
-from z3ext.portal.interfaces import IPortal
+from zojax.catalog.interfaces import ICatalogConfiglet
+from zojax.content.space.interfaces import ISpace
+from zojax.content.space.workspace import WorkspaceFactory
+from zojax.content.type.container import ContentContainer
+from zojax.portal.interfaces import IPortal
 
 from zojax.harvest.rss import _
 from zojax.harvest.rss.interfaces import IHarvestedRSSWorkspace, \
@@ -94,7 +94,7 @@ def harvest():
 
     portal = IPortal(root, None)
     if portal is None:
-        # Old instance of z3ext where portal is not the root object.
+        # Old instance of zojax where portal is not the root object.
         # We get the first instance of IPortal if it exists.
         for obj in root.values():
             portal = IPortal(obj, None)

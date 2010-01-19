@@ -1,16 +1,16 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    i18n_domain="zojax.harvest.rss">
 
   <!-- harvested rss workspace -->
-  <z3ext:content
+  <zojax:content
      name="contenttype.rss.workspace"
      title="Harvested RSS"
      class=".workspace.HarvestedRSSWorkspace"
      schema=".interfaces.IHarvestedRSSWorkspace"
      contains="contenttype.rss.item"
-     type="z3ext.content.type.interfaces.IInactiveType" />
+     type="zojax.content.type.interfaces.IInactiveType" />
 
   <!-- harvested rss workspace factory -->
   <adapter
@@ -18,13 +18,13 @@
      factory=".workspace.HarvestedRSSWorkspaceFactory" />
 
   <class class=".workspace.HarvestedRSSWorkspace">
-    <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
-    <implements interface="z3ext.content.type.interfaces.IUnremoveableContent" />
+    <implements interface="zojax.content.type.interfaces.IRenameNotAllowed" />
+    <implements interface="zojax.content.type.interfaces.IUnremoveableContent" />
     <implements
-       interface="z3ext.content.type.interfaces.IContainerContentsAware" />
+       interface="zojax.content.type.interfaces.IContainerContentsAware" />
     <implements 
        interface="zope.app.container.interfaces.IContainerNamesContainer" />
-    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
+    <implements interface="zojax.content.type.interfaces.ISearchableContent" />
 
     <require permission="zope.ManageServices"
              set_schema=".interfaces.IHarvestedRSSWorkspace"
@@ -36,7 +36,7 @@
     
     <require
        permission="zope.View"
-       interface="z3ext.content.type.interfaces.IItem
+       interface="zojax.content.type.interfaces.IItem
           zope.app.container.interfaces.IReadContainer" />
 
     <require

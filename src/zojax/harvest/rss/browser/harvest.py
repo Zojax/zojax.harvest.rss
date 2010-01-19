@@ -3,11 +3,11 @@ from zope.app import zapi
 
 from z3c.form.button import buttonAndHandler
 
-from z3ext.content.actions.action import Action
-from z3ext.content.actions.interfaces import IAction, IManageContentCategory
-from z3ext.layoutform.field import Fields
-from z3ext.layoutform.form import PageletForm
-from z3ext.statusmessage.interfaces import IStatusMessage
+from zojax.content.actions.action import Action
+from zojax.content.actions.interfaces import IAction, IManageContentCategory
+from zojax.layoutform.field import Fields
+from zojax.layoutform.form import PageletForm
+from zojax.statusmessage.interfaces import IStatusMessage
 
 from zojax.harvest.rss import _
 from zojax.harvest.rss.interfaces import IHarvestedRSSWorkspace

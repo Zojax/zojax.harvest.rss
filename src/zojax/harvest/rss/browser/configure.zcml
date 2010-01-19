@@ -1,6 +1,6 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:z3c="http://namespaces.zope.org/z3c"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.harvest.rss">
@@ -14,7 +14,7 @@
      layer="z3c.form.interfaces.IFormLayer"
      template="feedswidget.pt" />
 
-  <z3ext:pagelet
+  <zojax:pagelet
      name="harvest"
      for="..interfaces.IHarvestedRSSWorkspace"
      class=".harvest.HarvestForm"
@@ -29,10 +29,10 @@
      name="view"
      for="..interfaces.IHarvestedRSSItem" />
 
-  <z3ext:pagelet
+  <zojax:pagelet
      name="view"
      for="..interfaces.IHarvestedRSSItem"
-     provides="z3ext.content.type.interfaces.IContentView"
+     provides="zojax.content.type.interfaces.IContentView"
      class=".itemview.ItemView"
      permission="zope.View" />
 

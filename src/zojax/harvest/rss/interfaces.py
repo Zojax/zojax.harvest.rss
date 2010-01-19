@@ -1,6 +1,6 @@
 from zope import interface, schema
-from z3ext.content.space.interfaces import IWorkspace, IWorkspaceFactory
-from z3ext.content.type.interfaces import IItem
+from zojax.content.space.interfaces import IWorkspace, IWorkspaceFactory
+from zojax.content.type.interfaces import IItem
 from zojax.harvest.rss import _
 from zojax.harvest.rss.fields import FeedsField
 

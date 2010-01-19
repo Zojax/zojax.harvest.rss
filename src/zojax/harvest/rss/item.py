@@ -1,8 +1,8 @@
 from zope import interface
 from zope.schema.fieldproperty import FieldProperty
-from z3ext.content.type.item import Item
+from zojax.content.type.item import Item
 from zojax.harvest.rss.interfaces import IHarvestedRSSItem
-from z3ext.content.type.interfaces import ITitleBasedName
+from zojax.content.type.interfaces import ITitleBasedName
 
 
 class HarvestedRSSItem(Item):
