@@ -1,11 +1,11 @@
 from zope import interface
 from zope.schema.fieldproperty import FieldProperty
-from zojax.content.type.item import Item
+from zojax.content.type.item import PersistentItem
 from zojax.harvest.rss.interfaces import IHarvestedRSSItem
 from zojax.content.type.interfaces import ITitleBasedName
 
 
-class HarvestedRSSItem(Item):
+class HarvestedRSSItem(PersistentItem):
     interface.implements(IHarvestedRSSItem, ITitleBasedName)
     
     id = FieldProperty(IHarvestedRSSItem['id'])
