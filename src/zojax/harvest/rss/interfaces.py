@@ -37,6 +37,10 @@ class IHarvestedRSSItem(IItem):
     feedURL = schema.URI(
          title=_(u'URL'),
          required=True)
+
+    sourceTitle = schema.TextLine(
+         title=_(u'Source Title'),
+         required=True)
     
     summary = schema.Text(
          title=_(u'Summary'),

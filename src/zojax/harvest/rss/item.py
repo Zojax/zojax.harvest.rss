@@ -10,6 +10,7 @@ class HarvestedRSSItem(PersistentItem):
     
     id = FieldProperty(IHarvestedRSSItem['id'])
     feedURL = FieldProperty(IHarvestedRSSItem['feedURL'])
+    sourceTitle = FieldProperty(IHarvestedRSSItem['sourceTitle'])
     url = FieldProperty(IHarvestedRSSItem['url'])
     summary = FieldProperty(IHarvestedRSSItem['summary'])
     author = FieldProperty(IHarvestedRSSItem['author'])

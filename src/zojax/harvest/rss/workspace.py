@@ -54,6 +54,7 @@ class HarvestedRSSWorkspace(ContentContainer):
                     item = HarvestedRSSItem()
                     item.id = entry.id
                     item.feedURL = str(feed)
+                    item.sourceTitle = parsed.feed.title
                     item.url = str(entry.link)
                     item.title = entry.title
                     summary = getattr(entry, "summary", None)
