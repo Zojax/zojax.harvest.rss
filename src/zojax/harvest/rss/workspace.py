@@ -19,10 +19,9 @@ from zojax.harvest.rss.interfaces import IHarvestedRSSWorkspace, \
 from zojax.harvest.rss.item import HarvestedRSSItem
 from zope.lifecycleevent import ObjectCreatedEvent
 from zope.app.container.interfaces import INameChooser
-from zope.security.proxy import removeSecurityProxy
-from zope.app.container.contained import ObjectAddedEvent
 import BeautifulSoup
 
+import datetime
 import transaction
 import feedparser
 
@@ -65,7 +64,10 @@ class HarvestedRSSWorkspace(ContentContainer):
                         item.summary = summary
                     
                     item.author = getattr(entry, "author", None)
-                    item.published = getattr(entry, "published", getattr(entry, "created", None))
+                    published = getattr(entry, "published_parsed", getattr(entry, "created_parsed", None))
+                    if published:
+                        published = datetime.datetime(*published[:6])
+                    item.published = published
                     event.notify(ObjectCreatedEvent(item))
                     name = INameChooser(self).chooseName(u"", item)
                     self[name] = item
