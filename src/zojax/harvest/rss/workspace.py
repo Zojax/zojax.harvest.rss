@@ -57,6 +57,11 @@ class HarvestedRSSWorkspace(ContentContainer):
                     item.url = str(entry.link)
                     item.title = entry.title
                     summary = getattr(entry, "summary", None)
+                    if not summary:
+                        try:
+                            summary = entry.content[0].value 
+                        except:
+                            pass
                     if summary:
                         soup = BeautifulSoup.BeautifulSoup(summary)
                         soup.find("div", {"class": "feedflare"}).extract()
