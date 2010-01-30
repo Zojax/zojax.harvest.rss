@@ -14,7 +14,7 @@
 </div>
 <div class="right">
   <div class="rating-ct">
-    <tal:block replace="structure context/@@displayrating" />
+    <tal:block replace="structure context/@@displayrating | nothing" />
   </div>
   <dl class="actionsMenu actionMenu deactivated" tal:condition="view/showActions">
     <dt class="actionMenuHeader">
