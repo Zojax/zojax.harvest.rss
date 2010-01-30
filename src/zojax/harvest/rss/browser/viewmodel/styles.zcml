@@ -1,0 +1,21 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.harvest.rss">
+
+  <zojax:resourcedirectory
+     name="zojax-harvest-rss"
+     directory="resources" />
+     
+  <!-- styles -->
+  <zojax:resourceinclude
+     name="zojax-harverst-rss.css"
+     library="zojax" type="stylesheet" path="zojax-harvest-rss/styles.css" filetype="zrt" />
+
+  <zojax:resourceinclude
+     name="zojax-harvest-rss.js"
+     path="zojax-harvest-rss/javascripts.js"
+     require="jquery" library="zojax" type="javascript" />
+
+</configure>

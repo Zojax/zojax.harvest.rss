@@ -1,0 +1,34 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.harvest.rss">
+
+  <zojax:viewmodel
+     name="harvested.rss"
+     title="Harvested RSS Content"
+     for="zojax.harvest.rss.interfaces.IHarvestedRSSWorkspace"
+     schema=".interfaces.IHarvestedRSSModel"
+     class=".model.HarvestedRSSModel" />
+
+  <zojax:pagelet
+     for=".interfaces.IHarvestedRSSModel"
+     class=".view.HarvestedRSSView"
+     template="view.pt"
+     provides="zojax.content.type.interfaces.IContentView"
+     type="content.model.renderer" />
+
+  <browser:page
+     name="navigation"
+     for=".interfaces.IHarvestedRSSView"
+     template="navigation.pt"
+     class=".navigation.Navigation"
+	 permission="zope.View" />
+
+  <browser:page
+     name="listingview"
+     for="zojax.harvest.rss.interfaces.IHarvestedRSSItem"
+     class=".item.ItemView"
+	 permission="zope.View" />
+
+</configure>

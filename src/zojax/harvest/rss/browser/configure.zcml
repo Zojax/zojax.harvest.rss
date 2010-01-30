@@ -35,5 +35,7 @@
      provides="zojax.content.type.interfaces.IContentView"
      class=".itemview.ItemView"
      permission="zope.View" />
+     
+  <include package=".viewmodel" />
 
 </configure>

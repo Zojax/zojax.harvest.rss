@@ -1,0 +1,46 @@
+<div class="details-ct">
+  <h3 class="title"><a class="item-link" tal:content="view/title" tal:attributes="href context/@@absolute_url"></a>
+  <a tal:attributes="href view/url">&rarr;</a></h3>
+  <a href="javascript:void(0);" class="expand-link collapsible_header collapsed">(Complete Item Description)</a>
+  <ul style="display: none;" class="item-details collapsible_item">
+    <li><tal:block replace="structure view/description" /></li>
+  </ul>
+  <ul class="item-details">
+    <li tal:condition="view/author"><span>Author:</span>
+        <strong tal:content="view/author" />
+    </li>
+    <li><span>Source: </span><tal:block content="view/source" /></li>
+  </ul>
+</div>
+<div class="right">
+  <div class="rating-ct">
+    <tal:block replace="structure context/@@displayrating" />
+  </div>
+  <dl class="actionsMenu actionMenu deactivated" tal:condition="view/showActions">
+    <dt class="actionMenuHeader">
+      <a title="Actions" href="javascript:void(0);">
+        <img tal:attributes="src context/++resource++zweave-theme-images/actions-menu-btn.png" alt="Actions"/>
+      </a>
+    </dt>
+    <dd class="actionMenuContent">
+      <ul>
+        <li tal:condition="view/ratable"><a tal:attributes="onclick string:showRateFormFromListing(this, '${context/@@absolute_url}')" 
+ 	           href="javascript:void(0);">Rate This Item</a></li>
+	    <tal:block condition="view/saveable">
+	      <tal:block condition="view/canSave">
+	        <li class="save-link">
+	          <a tal:attributes="onclick string:saveItemFromListing(this, '${context/@@absolute_url}')"
+	             href="javascript:void(0);">Save This Item</a>
+	        </li>
+	      </tal:block>
+	      <tal:block condition="not:view/canSave">
+	        <li>
+	          <a onclick="goToWithCameFrom(this.href);return false;"
+	             tal:attributes="href string:${context/@@absolute_url}/@@portfolio.save">Save This Item</a></li>
+	      </tal:block>
+		</tal:block>
+      </ul>
+    </dd>
+  </dl>
+  <div class="rate-form-ct" tal:condition="view/ratable"></div>
+</div>

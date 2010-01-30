@@ -1,0 +1,214 @@
+/* zrt-cssregistry: */
+
+/* Item listing */
+.listing-item a.expand-button {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 15px;
+}
+
+.listing-item a.expand-button.collapsed {
+    background: url(zojax-harvest-rss/collapsible-btn-closed.png) no-repeat 0% 0%;
+}
+
+.listing-item a.expand-button.expanded {
+    background: url(zojax-harvest-rss/collapsible-btn-opened.png) no-repeat 0% 0%;
+}
+
+.listing-item a.expand-link {
+    background: none; /* Fix for IE6 */
+}
+
+.listing-item .details-ct {
+    margin: 0px 7px;
+    float: left;
+    width: 580px;
+}
+
+.listing-item h3.title {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 4px;
+}
+
+.listing-item h3.title a {
+    color: #1f4d64;
+    text-decoration: none;
+}
+
+.listing-item h3.title a:visited {
+    color: #1f555f;
+}
+
+.listing-item .expand-link.expanded {
+    display: none;
+}
+
+.listing-item .item-details {
+    margin-top: 4px;
+}
+
+.listing-item .right {
+    float: right;
+}
+
+div.listing-item-separator {
+    border: 1px #bfc7ca;
+    border-style: solid none none none;
+    margin: 10px 0px;
+}
+
+div.listing-item-separator.first {
+    margin-top: -5px; /* Fix weird IE bug */
+}
+
+html > body div.listing-item-separator.first {
+    margin-top: 0px;
+}
+
+.notification-message {
+    background-color: #ffcc66;
+    border: 1px solid #a88743;
+    color: #544322;
+    font-weight: bold;
+    padding: 2px 5px;
+    margin: 3px;
+}
+
+/* Actions Menu */
+
+/* Dropdown menu */
+
+.actionMenu {
+    /*  The spec says we can't put this on an element with a float (although
+        Opera is the only one that cares) and we need it in order to catch
+        the position:absolute bubbling up */
+
+    margin: 0;
+    padding: 0;
+}
+
+.actionMenu.activated {
+    position: relative;
+}
+
+.actionMenu .actionMenuHeader {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.actionMenu.activated .actionMenuHeader {
+    position: relative;
+    z-index: 10;
+}
+
+.actionMenu .actionMenuHeader a {
+    display: block;
+}
+
+.actionMenuDisabled {
+    padding: 0 0.5em 0 0.5em !important;
+    cursor: pointer;
+}
+
+.actionMenu .actionMenuContent {
+    display: none;
+    z-index: 5;
+    position: absolute;
+    top: 2em;
+    right: -1px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.actionMenu .actionMenuContent ul {
+    display: block;
+    margin: -2px 0 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.actionMenu.activated .actionMenuContent {
+    display: block !important;
+}
+.actionMenu.activated .actionMenuContent {
+    /* this one will be ignored by IE, it is here to fix the cut-off error in
+       Firefox */
+    display: table !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.actionMenu.deactivated .actionMenuContent {
+    display: none !important;
+}
+
+.actionMenu .actionMenuContent li {
+    float: none;
+    background-color: transparent;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.actionMenu .actionMenuContent li a {
+    display: block;
+    white-space: nowrap;
+    padding: 0 0.5em;
+    margin: 0.2em 0;
+}
+
+.actionMenu .actionMenuContent .selected {
+    display: block;
+    white-space: nowrap;
+    padding: 0 0.5em;
+    margin: 0.2em 0;
+}
+
+.actionMenu .actionMenuContent .actionSeparator a {
+    margin-top: 0.2em;
+    padding-top: 0.2em;
+}
+
+.actionMenu .actionMenuContent .actionSeparator div.currentDefaultPage {
+    margin-top: 0.2em;
+    padding: 0.2em 0.5em 0em 0.5em;
+    white-space: nowrap;
+}
+
+.actionMenu .actionMenuContent .actionSeparator div.actionLabel {
+    margin-top: 0.2em;
+    padding: 0.2em 0.5em 0em 0.5em;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.actionsMenu.actionMenu.activated .actionMenuContent {
+  z-index: 15;
+}
+
+.actionsMenu.actionMenu.activated .actionMenuContent ul {
+    background: #3D8298;
+    border: 1px solid #1b536a;
+    position: relative;
+    left: -4px;
+}
+
+.actionsMenu.actionMenu .actionMenuContent li a {
+  font-size: 12px;
+    padding: 0.2em 0.5em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.actionsMenu.actionMenu .actionMenuContent li a:hover {
+    background-color: #1C4D65;
+  color: #ffffff;
+}

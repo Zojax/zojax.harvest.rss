@@ -1,0 +1,21 @@
+<tal:block replace="structure view/@@navigation"></tal:block>
+
+<tal:block repeat="item view/contents" >
+<div class="listing-item collapsible_container">
+  <a href="javascript:void(0);" class="expand-button collapsible_header collapsed"></a>
+    <tal:block define="listingview nocall:item/@@listingview | nothing">
+      <tal:block condition="listingview">
+    	    <tal:block replace="structure listingview" />
+        <div class="visualClear"></div>
+      </tal:block>
+    </tal:block>
+</div>
+<div class="listing-item-separator first" tal:condition="repeat/item/start"></div>
+<div class="listing-item-separator" tal:condition="not: repeat/item/start"></div>
+</tal:block>
+
+<tal:block replace="structure view/@@navigation"></tal:block>
+
+<form method="post" name="came-from-form" action=".">
+<input type="hidden" name="came_from" tal:attributes="value view/came_from" />
+</form>

@@ -19,5 +19,7 @@
     <include package=".browser" />
     
   </registerIn>
+  
+  <include package=".browser.viewmodel" file="styles.zcml" />
     
 </configure>

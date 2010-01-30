@@ -1,0 +1,55 @@
+<div class="listing-navigation">
+  <span class="left sep">
+    <a class="expand-link"
+       href="javascript:void(0);">Expand All</a>
+  </span>
+  <span class="left"> 
+    <a class="collapse-link"
+       href="javascript:void(0);">Collapse All</a>
+  </span> 
+  <tal:block tal:condition="python:view.batch.previous or view.batch.next">
+    <span class="right sep"
+          tal:define="last python:view.batch.batches[-1]">
+      <a tal:attributes="href python:view.createBatchLink(last.start);"
+         tal:condition="view/batch/next">
+         &gt;|</a>
+      <span tal:condition="not:view/batch/next" class="disabled">&gt;|</span>
+    </span>
+    <span class="right sep">
+      <a tal:attributes="href python:view.createBatchLink(view.batch.next.start)"
+         tal:condition="view/batch/next">
+         &gt;&gt;</a>
+      <span tal:condition="not:view/batch/next" class="disabled">&gt;&gt;</span>
+    </span>
+    <span class="right sep">
+      <tal:block repeat="batch view/batches">
+        <tal:block condition="not: batch">&hellip;</tal:block>
+        <tal:block condition="batch">
+          <a tal:attributes="href python:view.createBatchLink(batch.start)"
+             tal:condition="not:python:batch.start == view.batch.start"
+             tal:content="batch/number" />
+          <strong tal:condition="python:batch.start == view.batch.start"
+                  tal:content="batch/number" />
+        </tal:block>
+      </tal:block>
+    </span>
+    <span class="right sep">
+      <a tal:attributes="href python:view.createBatchLink(view.batch.previous.start)"
+         tal:condition="view/batch/previous">
+         &lt;&lt;</a>
+      <span tal:condition="not:view/batch/previous" class="disabled">&lt;&lt;</span>
+    </span>
+    <span class="right"
+          tal:define="first python:view.batch.batches[0]">
+      <a tal:attributes="href python:view.createBatchLink(first.start)"
+         tal:condition="view/batch/previous">
+         |&lt;</a>
+      <span tal:condition="not:view/batch/previous" class="disabled">|&lt;</span>
+    </span>
+  </tal:block>
+  <script type="text/javascript">
+    initializeCollapsibles();
+    initializeListingExpandAll();
+  </script>  
+  <div class="visualClear"></div>
+</div>
