@@ -64,7 +64,10 @@ class HarvestedRSSWorkspace(ContentContainer):
                             pass
                     if summary:
                         soup = BeautifulSoup.BeautifulSoup(summary)
-                        soup.find("div", {"class": "feedflare"}).extract()
+                        for feedflare in soup.findAll("div", {"class": "feedflare"}): 
+                            feedflare.extract()
+                        for image in soup.findAll("img"):
+                            image.extract()
                         summary = unicode(soup)
                         item.summary = summary
                     
@@ -77,6 +80,7 @@ class HarvestedRSSWorkspace(ContentContainer):
                     name = INameChooser(self).chooseName(u"", item)
                     self[name] = item
                     cnt += 1
+                    break
             except:
                 import logging, traceback
                 logging.error(traceback.format_exc())
