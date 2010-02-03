@@ -80,7 +80,6 @@ class HarvestedRSSWorkspace(ContentContainer):
                     name = INameChooser(self).chooseName(u"", item)
                     self[name] = item
                     cnt += 1
-                    break
             except:
                 import logging, traceback
                 logging.error(traceback.format_exc())
