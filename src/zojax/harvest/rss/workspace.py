@@ -8,7 +8,7 @@ from scheduler.interfaces import ITask
 from scheduler.loop import LoopTask
 
 from zojax.catalog.interfaces import ICatalogConfiglet
-from zojax.content.space.interfaces import ISpace
+from zojax.content.space.interfaces import IContentSpace
 from zojax.content.space.workspace import WorkspaceFactory
 from zojax.content.type.container import ContentContainer
 from zojax.portal.interfaces import IPortal
@@ -88,7 +88,7 @@ class HarvestedRSSWorkspace(ContentContainer):
 
 
 class HarvestedRSSWorkspaceFactory(WorkspaceFactory):
-    component.adapts(ISpace)
+    component.adapts(IContentSpace)
     interface.implements(IHarvestedRSSWorkspaceFactory)
 
     name = 'harvested-rss'
