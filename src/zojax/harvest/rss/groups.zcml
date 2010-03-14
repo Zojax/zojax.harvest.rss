@@ -1,0 +1,11 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   zcml:condition="installed zojax.groups">
+
+  <adapter
+     name="harvested-rss"
+     for="zojax.groups.interfaces.IGroup"
+     factory=".workspace.HarvestedRSSWorkspaceFactory" />
+
+</configure>
