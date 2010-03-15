@@ -18,6 +18,15 @@
     <implements interface="zojax.content.type.interfaces.ISearchableContent" />
     <implements interface="zojax.content.type.interfaces.IRenameNotAllowed" />
     
+    <implements interface="zojax.activity.interfaces.IActivityAware" />
+    <implements
+       interface="zojax.content.attachment.interfaces.IAttachmentsAware" />
+    <implements
+       interface="zojax.content.discussion.interfaces.IOpenDiscussible" />
+    <implements interface="zojax.content.type.interfaces.ITitleBasedName" />
+    <implements
+       interface="zojax.content.tagging.interfaces.IContentTaggable" />
+    
     <require permission="zope.View" interface=".interfaces.IHarvestedRSSItem" />
 
   </class>
