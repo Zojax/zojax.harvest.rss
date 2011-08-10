@@ -45,3 +45,6 @@ parts/
 .pydevproject
 .project
 commit.txt
+
+# externals - svn://svn.zope.org/repos/main/scheduler/trunk
+trunk/
