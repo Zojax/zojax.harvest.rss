@@ -1,11 +1,11 @@
 <div class="listing-navigation">
   <span class="left sep">
     <a class="expand-link"
-       href="javascript:void(0);">Expand All</a>
+       href="javascript:void(0);" i18n:translate="">Expand All</a>
   </span>
   <span class="left"> 
     <a class="collapse-link"
-       href="javascript:void(0);">Collapse All</a>
+       href="javascript:void(0);" i18n:translate="">Collapse All</a>
   </span> 
   <tal:block tal:condition="python:view.batch.previous or view.batch.next">
     <span class="right sep"
